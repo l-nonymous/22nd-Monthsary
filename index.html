@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+
+  <title>22nd Monthsary 💗</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --rose-dark: #8e3a5b;
+      --rose: #c9557d;
+      --pink: #e8789f;
+      --soft-pink: #f7a8c4;
+      --blush: #ffd6e2;
+      --baby-pink: #ffe9f0;
+      --white: rgba(255, 255, 255, 0.9);
+      --text: #4b2b38;
+      --muted: #a05b77;
+      --shadow: 0 20px 60px rgba(142, 58, 91, 0.22);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100dvh;
+      overflow-x: hidden;
+      overflow-y: auto;
+      color: var(--text);
+      font-family: "Poppins", sans-serif;
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(255, 214, 226, 0.75),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 85% 85%,
+          rgba(247, 168, 196, 0.55),
+          transparent 34%
+        ),
+        linear-gradient(
+          145deg,
+          #fff7fa 0%,
+          #ffe9f0 45%,
+          #ffd6e2 100%
+        );
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0.35),
+          transparent 45%
+        );
+      z-index: -1;
+    }
+
+    .page {
+      position: relative;
+      min-height: 100dvh;
+      padding:
+        max(30px, env(safe-area-inset-top))
+        max(18px, env(safe-area-inset-right))
+        calc(125px + env(safe-area-inset-bottom))
+        max(18px, env(safe-area-inset-left));
+    }
+
+    .hearts {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      color: rgba(232, 120, 159, 0.7);
+      font-size: 20px;
+      filter: drop-shadow(0 0 8px rgba(247, 168, 196, 0.45));
+      animation: floatUp linear forwards;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg) scale(0.8);
+        opacity: 0;
+      }
+
+      12% {
+        opacity: 0.85;
+      }
+
+      100% {
+        transform: translateY(-115vh) rotate(360deg) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      width: min(100%, 760px);
+      margin: 0 auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 24px 8px 34px;
+    }
+
+    .eyebrow {
+      margin-bottom: 8px;
+      color: var(--rose);
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .title {
+      color: var(--rose-dark);
+      font-family: "Dancing Script", cursive;
+      font-size: clamp(3.4rem, 15vw, 7rem);
+      font-weight: 700;
+      line-height: 0.95;
+      text-shadow:
+        0 5px 18px rgba(142, 58, 91, 0.15),
+        0 0 25px rgba(255, 255, 255, 0.55);
+    }
+
+    .subtitle {
+      max-width: 330px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .letter-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 30px;
+      padding: clamp(26px, 7vw, 52px);
+      background: var(--white);
+      box-shadow: var(--shadow);
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+    }
+
+    .letter-card::before {
+      content: "♡";
+      position: absolute;
+      top: 12px;
+      right: 22px;
+      color: rgba(232, 120, 159, 0.14);
+      font-family: "Dancing Script", cursive;
+      font-size: 7rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .greeting {
+      position: relative;
+      margin-bottom: 26px;
+      color: var(--rose-dark);
+      font-family: "Dancing Script", cursive;
+      font-size: clamp(1.8rem, 8vw, 2.5rem);
+      font-weight: 700;
+    }
+
+    .body-text {
+      position: relative;
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .body-text p {
+      margin-bottom: 20px;
+    }
+
+    .body-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      color: var(--rose);
+      font-weight: 600;
+    }
+
+    .closing {
+      margin-top: 28px;
+      color: var(--rose-dark);
+      font-family: "Dancing Script", cursive;
+      font-size: clamp(1.8rem, 8vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: right;
+    }
+
+    .music-player {
+      position: fixed;
+      right: max(18px, env(safe-area-inset-right));
+      bottom: max(18px, env(safe-area-inset-bottom));
+      left: max(18px, env(safe-area-inset-left));
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      width: min(420px, calc(100% - 36px));
+      margin: auto;
+      padding: 12px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 14px 35px rgba(142, 58, 91, 0.2);
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+      transform: translateZ(0);
+    }
+
+    .play-btn {
+      display: grid;
+      flex: 0 0 44px;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 50%;
+      color: white;
+      background: linear-gradient(
+        135deg,
+        var(--soft-pink),
+        var(--rose-dark)
+      );
+      box-shadow: 0 7px 18px rgba(201, 85, 125, 0.35);
+      cursor: pointer;
+      font-size: 16px;
+      transition: transform 0.2s ease;
+    }
+
+    .play-btn:active {
+      transform: scale(0.92);
+    }
+
+    .music-info {
+      min-width: 0;
+    }
+
+    .music-label {
+      color: var(--rose);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .song-title {
+      overflow: hidden;
+      color: var(--rose-dark);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 430px) {
+      .page {
+        padding-top: max(18px, env(safe-area-inset-top));
+        padding-right: max(14px, env(safe-area-inset-right));
+        padding-left: max(14px, env(safe-area-inset-left));
+      }
+
+      .hero {
+        padding-top: 22px;
+        padding-bottom: 28px;
+      }
+
+      .title {
+        font-size: clamp(3.2rem, 16vw, 4.6rem);
+      }
+
+      .letter-card {
+        border-radius: 25px;
+        padding: 27px 21px;
+      }
+
+      .body-text {
+        font-size: 0.95rem;
+        line-height: 1.82;
+      }
+
+      .closing {
+        text-align: center;
+      }
+
+      .music-player {
+        width: calc(100% - 28px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .heart {
+        animation: none;
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hearts" id="hearts"></div>
+
+  <main class="page">
+    <div class="content">
+      <header class="hero">
+        <h1 class="title">22nd Monthsary</h1>
+      </header>
+
+      <article class="letter-card">
+        <h2 class="greeting">My dearest Nadnad,</h2>
+
+        <div class="body-text">
+          
+          <p>
+            I've been thinking about how different things feel now compared to before, and i'm happy that we're slowly getting to where we've always wanted us to be. We're learning to communicate better, not let our fights drag on for too long, and fix things instead of letting our pride get in the way. We're still a work in progress of course but i can genuinely see us trying, and that means a lot to me.
+          </p>
+
+          <p>
+            I know we still have those moments when we misunderstand each other or get upset over things, but I love that we're slowly learning not to let those moments ruin everything. We're learning to talk things out, listen to each other, and find a way to make things okay again instead of staying mad for so long and honestly, baby, that's the kind of progress I've always wanted for us.
+          </p>
+
+          <p>
+            I'm not saying we're suddenly good at everything now, because we're definitely not HAHAHA but at least we're trying, and we're actually putting effort into changing the things we've talked about before. I want us to keep doing that, even when we're upset or when understanding each other feels a little harder than usual. I want us to be each other's comfort, not another reason why things feel heavy.
+          </p>
+
+          <p>
+            I'm really happy with where we're going, baby. It's nice seeing that the things we used to talk about are slowly becoming part of our relationship, little by little, and I hope we never stop growing together. I'm still choosing to figure things out with you, one day at a time. 
+          </p>
+
+           <p>
+            Happy 22nd monthsary, babyyy!! I love you so muchh mwaaaaaaaa ♡♡♡
+          </p>
+        </div>
+
+        <div class="closing">- your weyang</div>
+      </article>
+    </div>
+  </main>
+
+  <div class="music-player">
+    <button
+      class="play-btn"
+      id="playBtn"
+      aria-label="Play or pause background music"
+    >
+      ▶
+    </button>
+
+    <div class="music-info">
+      <div class="music-label">song</div>
+      <div class="song-title">I Knew It, I Knew You</div>
+    </div>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="I Knew It, I Knew You.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    const heartsContainer = document.getElementById("hearts");
+    const audio = document.getElementById("bgMusic");
+    const playBtn = document.getElementById("playBtn");
+
+    let isPlaying = false;
+
+    function createHeart() {
+      const heart = document.createElement("div");
+
+      heart.className = "heart";
+      heart.textContent = "💗";
+      heart.style.left = `${Math.random() * 100}%`;
+      heart.style.fontSize = `${Math.random() * 10 + 15}px`;
+      heart.style.animationDuration = `${Math.random() * 4 + 5}s`;
+
+      heartsContainer.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 9500);
+    }
+
+    setInterval(createHeart, 650);
+
+    playBtn.addEventListener("click", async () => {
+      try {
+        if (isPlaying) {
+          audio.pause();
+          playBtn.textContent = "▶";
+          isPlaying = false;
+        } else {
+          await audio.play();
+          playBtn.textContent = "Ⅱ";
+          isPlaying = true;
+        }
+      } catch (error) {
+        console.log("Music could not be played:", error);
+      }
+    });
+  </script>
+</body>
+</html>
